@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+a{
+    color: #000;
+    font-size: 20px;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+img{
+    width: 100%;
+}
+
+header{
+    margin: 12px;
+}
+
+.logo{
+    text-align: center;
+}
+
+.logo:hover{
+    cursor: pointer;
+}
+
+.logo img{
+    width: 150px;
+}
+
+.links-a a:first-child{
+    margin-right: 40px;
+}
+
+main{
+    margin: 12px;
+}
+
+.item:hover{
+    opacity: .4;
+}
+
+.name{
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 19px;
+}
+
+.main-catalog>.item{
+    margin-top: 20px;
+}
+
+.promo-catalog{
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px 12px;
+}
+
+.promo-catalog>h2{
+    font-weight: 400;
+    font-size: 36px;
+    width: 100%;
+}
+
+.promo-catalog>div{
+    width: 47%;
+}
+
+@media screen and (min-width: 1280px) {
+    header{
+        margin: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    main{
+        margin: 40px;
+    }
+    
+    main>h1{
+        margin-bottom: 24px;
+    }
+
+    .logotip{
+        width: 400px;
+    }
+    .main-catalog{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+    .main-catalog>.item{
+        margin-top: 0;
+        width: 32%;
+    }
+    .promo-catalog{
+        justify-content: space-between;
+        gap: 20px;
+    }
+    .promo-catalog>div{
+        width: 23%;
+    }
+    .promo-catalog>div>.name{
+        font-weight: 300;
+    }
+}
