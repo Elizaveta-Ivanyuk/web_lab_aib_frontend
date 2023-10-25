@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zad2</title>
+</head>
+<body>
+    <script>
+        var f = new Array('apple', 'strawberry', 'blueberry', 'raspberry', 'lemon');
+        //замена повторяющихся операций - циклом
+        for(let i = 0; i<f.length; i++){
+            console.log(f[i]);
+        }
+        for(let i = 0; i<f.length; i++){
+            if (f[i] === 'apple') console.log('apple green')
+            if (f[i] === 'strawberry') console.log('strawberry red')
+            if (f[i] === 'blueberry') console.log('blueberry blue')
+            if (f[i] === 'raspberry') console.log('raspberry light red')
+            if (f[i] === 'lemon') console.log('lemon yellow')
+        }
+    </script>
+</body>
+</html>

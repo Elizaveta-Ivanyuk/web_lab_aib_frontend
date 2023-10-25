@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zad4</title>
+</head>
+<body>
+    <script>
+        var klassSoStudentami = [{FIO:'Петров А.А.',Ocenka:5},
+        {FIO:'Иванов Б.Б.',Ocenka:3.4},{FIO:'Сидоров Г.Г.',Ocenka:9},
+        {FIO:'Немолодой Д.Д',Ocenka:2},{FIO:'Молодой Е.Е',Ocenka:3.4}];
+
+        var s = 0;
+        var kolichectvo = 0;
+        var ploxieStudenti = [];
+        let err = 'Это значение учитываться не будет оно не соответствует допустимым значениям';
+
+        for(var PoryadkoviyNomer=0; PoryadkoviyNomer < klassSoStudentami.length; PoryadkoviyNomer++)
+        {
+            var Student = klassSoStudentami[PoryadkoviyNomer];
+            if (Student.Ocenka>5 || Student.Ocenka<0) console.log(err);
+            if (Student.Ocenka<4) ploxieStudenti.push(Student)
+            s += Student.Ocenka;
+            kolichectvo ++;
+        }
+        s = s/kolichectvo;
+        console.log('Средняя оценка: '+s);
+        console.log('Плохие студенты:');
+        if(ploxieStudenti.length > 0 ) {
+            ploxieStudenti.forEach((znachenie)=>{
+                console.log('Фио: '+znachenie.FIO+'; Оценка: '+znachenie.Ocenka)
+            });
+        }
+        else{
+            console.log('Таких нет');
+        }
+    </script>
+</body>
+</html>

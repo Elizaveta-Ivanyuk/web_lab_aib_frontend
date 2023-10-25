@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zad3</title>
+</head>
+<body>
+    <script>
+        //упрощение проверки введеного числа
+        while ( true )
+        {  
+            var d=prompt('Введите кол-во человек ', undefined);
+            if ( d > 0 || !isNaN(parseFloat(d))) break;
+        }
+        while ( true )
+        {  
+            var k = prompt('Введите зарплату на человека ', undefined);
+            if ( k > 0 ||!isNaN(parseFloat(k))) break;
+        }
+        alert('Затраты на ЗП ' + d*k);
+    </script>
+</body>
+</html>
