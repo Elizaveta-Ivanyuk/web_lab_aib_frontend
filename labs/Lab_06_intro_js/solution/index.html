@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+</head>
+<body>
+    <script>
+        //Задание 1
+        let apple = 10;
+        //вывод переменной в окне
+        alert('Переменная apple равна: '+apple);
+        //вывод переменной в консоль
+        console.log('Переменная apple равна: '+apple);
+        //Функция генирации имении выбраной длины
+        function name(length) {
+            let result = '';
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+            let counter = 0;
+            //Заполнение перменной result рандомными символами
+            while (counter < length) {
+                result += chars.charAt(Math.floor(Math.random() * chars.length));
+                counter += 1;
+            }
+            return result;
+        }
+        //И бога зовут...(Вывод переменной в консоль)
+        let condition = name(5);
+        console.log('Good game is ' + condition);
+
+        //Задание 2
+        let someInt = 20;
+        let someText  = '100';
+        let someBool = true;        
+        //Чудеса конкатенации
+        console.log('someInt + someText: '+someInt + someText);
+        console.log('someInt + someBool: '+someInt + someBool);
+        console.log('someText + someInt: '+someText + someInt);
+        console.log('someText + someBool: '+someText + someBool);
+        console.log('someBool + someInt: '+someBool + someInt);
+        console.log('someBool + someText: '+someBool + someText);
+        
+        //Задание 3
+        let array = [];
+        array.length = 10;
+        //Заполнение массива
+        for(let i = 0; i<array.length; i++){
+            array[i] = Math.round(-50 - 0.5 + Math.random() * (50 - -50 + 1));
+        }
+        //Вывод полученого массива
+        console.log('Вывод полученого массива: '+array);
+        //Удаление из массива отрицательных чисел
+        array = array.filter(x=>x>-1);
+        //Вывод фильтрованного массива
+        console.log('Вывод фильтрованного массива: '+array);
+
+        //Задание 4
+        //Функция получения рандомного числа
+        function getRandomNumber(min, max) {
+            return Math.round(min - 0.5 + Math.random() * (max - min + 1))
+        } 
+        console.log('Функция получения рандомного числа: '+getRandomNumber(-100,100));
+
+        function getNewArrayPlusNumb(arr, numb){
+            let NewArr = [];
+            NewArr.length = arr.length;
+            for(let y = 0; y<arr.length; y++){
+                NewArr[y] = arr[y] * numb;
+            }
+            return NewArr;
+        }
+        
+        console.log('Функция умножения массива на параметр: '+getNewArrayPlusNumb(array, 2));
+        //анонимная функция
+        const anonym = function(length) {
+            let result = '';
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+            let counter = 0;
+            while (counter < length) {
+                result += chars.charAt(Math.floor(Math.random() * chars.length));
+                counter += 1;
+            }
+            return result;
+        };
+
+        console.log('Анонимная функция '+ anonym(5));
+
+        //Работа с объектами
+        let users = {
+            firstName: 'Грозный',
+            surname: 'Иван',
+            patronymic: 'Васильевич',
+            birthday: new Date(1530, 7, 5),
+            hobby : 'Казнь',
+            group: '123',
+            old: function(){
+                var today = new Date();
+                var age = today.getFullYear() - this.birthday.getFullYear();
+                var m = today.getMonth() - this.birthday.getMonth();
+                if (m < 0 || (m === 0 && today.getDate() < this.birthday.getDate())) {
+                    age--;
+                }
+                return age;
+            },
+            Info: function(){
+                return this.firstName +" "+ this.surname + " " + this.patronymic +" "+this.birthday.toLocaleDateString() +" хобби:"+this.hobby +" возраст:"+this.old();
+            }
+        }
+        //вывод информации 
+        alert(users.Info());
+
+        //рассчёт суммы
+        function sum(obj) {
+            return Object.keys(obj).reduce((sum,key)=>sum+parseFloat(obj[key]||0),0);
+        }
+        let salaryUser = {
+            "Соколова Аделина":136000,
+            "Булатова Мария":156000,
+            "Медведева Анна":130000,
+            "Трофимов Илья":120000,
+            "Дмитриева Таисия":100000,
+            "Комарова Полина":111000,
+            "Давыдова Наталья":174000,
+            "Жуков Артём":195000,
+            "Марков Денис":146000,
+            "Маркин Владимир":119000,
+        }
+        //вывод суммы зарплат всех
+        console.log(sum(salaryUser));
+
+   </script>
+</body>
+</html>
