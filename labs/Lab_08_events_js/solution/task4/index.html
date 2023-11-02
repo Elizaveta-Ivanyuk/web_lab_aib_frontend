@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="RU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Lab8</title>
+</head>
+<body>
+    <header>
+        <div class="box"></div>
+    </header>
+    <main onclick="setColor(this)">
+        <div class="inputBlock">
+            <label for="red">
+                red
+                <input type="text" id="red" maxlength="3">
+            </label>
+            <label for="green">
+                green
+                <input type="text" id="green" maxlength="3">
+            </label>
+            <label for="blue">
+                blue
+                <input type="text" id="blue" maxlength="3">
+            </label>
+            <button class="saveSquareButt">Сгенерировать</button>
+        </div>
+        <div class="square"></div>
+    </main> 
+
+    <div class="primer1" onclick="setColor(this)">
+    Пример заливки
+    </div>
+    <script src="./app.js"></script>
+</body>
+</html>
